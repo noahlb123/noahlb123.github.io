@@ -6,7 +6,7 @@
   display: block;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Bitter', sans-serif;
   color: #fff;
 }
 
@@ -28,4 +28,29 @@ body {
 
 #center-body-text {
   text-align: center;
+}
+
+#shrink-wrap {
+  transform: translate(calc(50% - 50px), 0);
+}
+
+.link-list {
+  list-style-type: disc;
+}
+
+.link-list-elm {
+  text-align: left;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.link-list-elm > a::before {
+  display: inline-block;
+  content: '';
+  -webkit-border-radius: 0.375rem;
+  border-radius: 0.375rem;
+  height: 0.5rem;
+  width: 0.5rem;
+  margin-right: 0.2rem;
+  background-color: white;
 }
