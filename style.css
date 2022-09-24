@@ -21,9 +21,10 @@ body {
 }
 
 #portrait {
-  margin: 10px;
   display: block;
-  width: calc(100% - 20px);
+  width: 51%;
+  margin: auto;
+  margin-top: 20px;
 }
 
 #center-body-text {
