@@ -63,6 +63,20 @@ function toggleSize(elm) {
   }
 }
 
+function updateSize() {
+  if (window.innerWidth < 850) {
+    size = "small";
+  } else {
+    size = "big";
+  }
+  if (oldSize != size) {
+    boxes.forEach((item, i) => {
+      toggleSize(item);
+    });
+  }
+  oldSize = size;
+}
+
 function enterFunc(event) {
   toggleTextDisplay(boxMap[event.target.id]);
 }
@@ -79,18 +93,7 @@ boxes.forEach((item, i) => {
   boxMap[item.id] = boxTexts[i];
 });
 
-onresize = (event) => {
-  if (window.innerWidth < 850) {
-    size = "small";
-  } else {
-    size = "big";
-  }
-  if (oldSize != size) {
-    boxes.forEach((item, i) => {
-      toggleSize(item);
-    });
-  }
-  oldSize = size;
-};
+onresize = (event) => {updateSize();};
+updateSize();
 </script>
 </html>
