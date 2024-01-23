@@ -25,11 +25,15 @@ body {
   padding: 0;
 }
 
-#portrait {
+.portrait {
   display: block;
-  width: 51%;
   margin: auto;
   margin-top: 20px;
+  width: 51%;
+}
+
+.block {
+  display: inline-block;
 }
 
 #center-body-text {
