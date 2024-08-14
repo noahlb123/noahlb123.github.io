@@ -1,6 +1,7 @@
 :root {
   --pink: #b185aa;
   --green: #0e2210;
+  --orange: #F5CF47;
 }
 
 * {
@@ -43,6 +44,20 @@ body {
 .link-list-elm {
   display: inline-block;
   font-size: 20px;
+}
+
+.link-list-elm > a {
+  padding: 5px;
+  color: var(--pink);
+  background-color: var(--green);
+  text-decoration: none;
+  border-radius: 0px;
+  transition: background-color 0.5s;
+  transition-timing-function: ease;
+}
+
+.link-list-elm > a:hover {
+  background-color: var(--orange);
 }
 
 .grid {
