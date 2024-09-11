@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;900&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Noah Liguori-Bills' Will</title>
+</head>
+<body>
+<div id="frame" class="back-yellow">
+    <canvas id="pikacu-canvas" width="452" height="452" style="border: solid 1px white; margin: auto;"></canvas>
+</body>
+<script src="./reebs/rgb.js"></script>
+<script src="./reebs/pika.js"></script>
+<script>
+//create pica instance
+let pikacuCan = document.getElementById('pikacu-canvas');
+let pika = new PikaAnimation(pikacuCan);
+//animation
+let lastTime = 0;
+function anim(timestamp) {
+    if (timestamp) {
+    dt = timestamp - lastTime;
+    lastTime = timestamp;
+    }
+    pika.draw();
+    requestAnimationFrame(anim);
+}
+anim(0);
+</script>
+</html>
+
