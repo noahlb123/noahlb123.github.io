@@ -38,6 +38,7 @@ The next morning a red sun rose over Farmville. One by one the people of Farmvil
     document.querySelector('title').innerHTML = title;
    })
   .catch((e) => console.error(e));*/
+var text, title;
 [title, text] = temp.split(/\n(.*)/s);
 document.getElementById('main').innerHTML = text;
 document.getElementById('title').innerHTML = title;
