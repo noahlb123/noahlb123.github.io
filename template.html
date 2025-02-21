@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;900&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <title>Noah's Blog</title>
+</head>
+<body>
+<h1 id="title" style="text-align: center; margin-top: 1cm;"></h1>
+<h2 id="author" style="text-align: center; font-weight: normal;"></h2>
+<p id="date" style="text-align: center; font-weight: normal;"></p>
+<div class="text">
+    <p id="main"></p>
+</div>
+</body>
+<script>
+var temp = ``
+var text, title;
+[title, text] = temp.split(/\n(.*)/s);
+[author, text] = text.split(/\n(.*)/s);
+[date, text] = text.split(/\n(.*)/s);
+document.getElementById('main').innerHTML = text;
+document.getElementById('title').innerHTML = title;
+document.getElementById('author').innerHTML = author;
+document.getElementById('date').innerHTML = date;
+document.querySelector('title').innerHTML = title;
+</script>
+</html>

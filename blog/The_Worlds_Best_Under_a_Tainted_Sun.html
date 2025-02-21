@@ -4,17 +4,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;900&family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Noah's Blog</title>
 </head>
 <body>
 <h1 id="title" style="text-align: center; margin-top: 1cm;"></h1>
+<h2 id="author" style="text-align: center; font-weight: normal;"></h2>
+<p id="date" style="text-align: center; font-weight: normal;"></p>
 <div class="text">
     <p id="main"></p>
 </div>
 </body>
 <script>
 var temp = `The World’s Best Under a Tainted Sun
+Noah Liguori-Bills
+9/5/24
 
 There was once a small town called farmville. There were only two jobs in farmville: one hundred farmers and one scientist. The farmers loved the scientist, because he was the best scientist in the whole world, and the scientist loved the farmers because they were the best farmers. Farmville was so small, every single person who lived there could hear you if you yelled. One morning when all the farmers were farming, the scientist went outside and yelled “I have made an important discovery! Farmville’s farms are tainting the sunlight.” This made one farmer angry. She yelled “Sunlight cannot be tainted by farms! That is impossible!” A farmer in between them had especially sensitive ears. He threw his hands up and yelled “Everyone is being too loud! Let’s talk about this where no one has to yell, and when no one is busy farming!” The scientist yelled one last time “I will wait until this evening when no one is farming, but the longer farmville does not know about its sunlight the worse it will get!” Then he left the farmers to their farming.
 
@@ -27,21 +31,14 @@ The next morning while all the farmers were farming the scientist went outside a
 The next morning while all the farmers were farming and thinking the scientist went outside and yelled “I am going to the forest to experiment. While I am gone you farmers need to figure out how to farm less or our sunlight will be tainted by tonight!” All the farmers nodded their heads and the scientist left. All the farmers thought as hard as they possibly could but no one had any good ideas. With tears in her eyes, the once angry farmer said “We all know it is too late to change! Even if we could think of something it is too late to start doing it, we may as well enjoy ourselves for one last day instead of wasting our time!” All the farmers nodded their heads, then they all went to a comfortable place to talk and listen and threw a joyful party and no one thought about farming less or tainted sunlight. Then the scientists returned, and when he saw the party he got very upset and said “You all deserve to die horrible deaths!” But no one could hear him. He continued yelling “I showed you exactly what you needed to do, but you did not do it! And now we will all choke and cry and feel like we’re burning because of you farmers!”
 
 The next morning a red sun rose over Farmville. One by one the people of Farmville started choking and crying and feeling like they were on fire. The scientist went outside and yelled while he choked and cried “I was the world’s best scientist! The only mistake I ever made was thinking Farmville had the world’s best farmers!”`
-/*fetch("https://filesampleshub.com/download/document/txt/sample2.txt")
-  .then((res) => res.text())
-  .then((text) => {
-    var text = temp;
-    var title;
-    [title, text] = text.split(/\n(.*)/s);
-    document.getElementById('main').innerHTML = text;
-    document.getElementById('title').innerHTML = title;
-    document.querySelector('title').innerHTML = title;
-   })
-  .catch((e) => console.error(e));*/
 var text, title;
 [title, text] = temp.split(/\n(.*)/s);
+[author, text] = text.split(/\n(.*)/s);
+[date, text] = text.split(/\n(.*)/s);
 document.getElementById('main').innerHTML = text;
 document.getElementById('title').innerHTML = title;
+document.getElementById('author').innerHTML = author;
+document.getElementById('date').innerHTML = date;
 document.querySelector('title').innerHTML = title;
 </script>
 </html>
