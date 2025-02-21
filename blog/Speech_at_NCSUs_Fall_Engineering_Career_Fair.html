@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;900&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <title>Noah's Blog</title>
+</head>
+<body>
+<h1 id="title" style="text-align: center; margin-top: 1cm;"></h1>
+<h2 id="author" style="text-align: center; font-weight: normal;"></h2>
+<p id="date" style="text-align: center; font-weight: normal;"></p>
+<div class="text">
+    <p id="main"></p>
+</div>
+</body>
+<script>
+var temp = `Speech at NCSU's Fall Engineering Career Fair
+Noah Liguori-Bills
+9/18/24
+
+﻿My name is Noah and I am the co-chair of the UE 150 graduate workers union at NC State. As a union organizer, I understand that US wars, like the US sponsored Palestinian genocide, are only possible when the working class, including engineers, are exploited by the owning class. The handful of shareholders and executives that benefit from US wars could never win wars themselves. Wars are won by the soldiers who fight them, and the engineers who design and build the weapons. It is therefore essential for the owning class to convince engineers that working for the military industrial complex is reasonable and justified, which is why they prefer the term “defense industry”. But simple facts like “80% of all schools in Gaza have been destroyed by US bombs” erase any idea that weapons manufacturers are defending Americans. Other military tied companies prefer to avoid an association with war at all. Boeing brands itself as just a commercial airline manufacturer, rarely bringing public attention to its war planes.Red Hat brags about using open source software while its operating system provides the foundation of Israel’s Iron Dome. At just this career fair, Caterpillar, General Dynamics, Northrop Grumman, Siemens Energy, Red Hat, Hewlett Packard Enterprise, and GE Aerospace all help manufacture weapons of war!
+
+Engineers, as a recent graduate myself I remember the vulnerability a college senior can feel when faced with uncertainty job searching. This is by design. It is in the interest of the owning class for the working class to feel powerless because when we recognize the power we have, we use it! As I speak, the Boeing machinist strike has halted production of the company’s signature jets, which is projected to cost Boeing 3 billion dollars! And just two weeks ago, a nationwide strike in Israel calling for a ceasefire shutdown nearly the entire nation! The world moves when workers move it, and it stops when workers stop! Each engineer here today has the same power! You can withhold your labor from the warmongers and destroy the weapon you would have created. If you can get a job building weapons of war, you can get a job building a better world! Free Palestine!
+`
+var text, title;
+[title, text] = temp.split(/\n(.*)/s);
+[author, text] = text.split(/\n(.*)/s);
+[date, text] = text.split(/\n(.*)/s);
+document.getElementById('main').innerHTML = text;
+document.getElementById('title').innerHTML = title;
+document.getElementById('author').innerHTML = author;
+document.getElementById('date').innerHTML = date;
+document.querySelector('title').innerHTML = title;
+</script>
+</html>

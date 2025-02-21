@@ -5,7 +5,7 @@
 }
 
 * {
-  display: block;
+  /*display: block;*/
   margin: 0;
   padding: 0;
   font-family: 'Bitter', sans-serif;
@@ -125,4 +125,28 @@ body {
   word-wrap: break-word;
   margin: auto;
   white-space: pre-line;
+}
+
+#blog-table {
+  margin: 0px auto;
+  border-spacing: 0px;
+}
+
+#blog-table > * > * > th {
+  border: 0.5px solid black;
+  padding: 4px;
+  font-size: 2em;
+}
+
+#blog-table > * > * > td {
+  border: 0.5px solid black;
+  padding: 4px;
+  transition: background-color 0.5s;
+  transition-timing-function: ease;
+  font-size: 2em;
+}
+
+#blog-table > * > * > td:hover {
+  cursor: pointer;
+  background-color: var(--orange);
 }
