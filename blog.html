@@ -14,8 +14,8 @@
     <table id="blog-table">
         <thead>
             <tr>
-                <th>Post</th>
-                <th>Year</th>
+                <th>Title</th>
+                <th>Date</th>
             </tr>
         </thead>
         <tbody>
@@ -24,14 +24,13 @@
 </body>
 <script>
     const tbody = document.querySelector('#blog-table > tbody');
-    templateInput = [['temp name', 'temp link', 'temp year'], ['temp2 name', 'temp link', 'temp year'], ['temp3 name', 'temp link', 'temp year']];
+    templateInput = [["The World\u2019s Best Under a Tainted Sun", "The_Worlds_Best_Under_a_Tainted_Sun.html", "9/5/24"], ["Speech at UConn Board of Trustees Meeting", "Speech_at_UConn_Board_of_Trustees_Meeting.html", "3/30/22"], ["Kwanzaa and My White Ass", "Kwanzaa_and_My_White_Ass.html", "12/25/24"], ["Speech at NCSU's Fall Engineering Career Fair", "Speech_at_NCSUs_Fall_Engineering_Career_Fair.html", "9/18/24"], ["Speech at The 2024 Earth Day Divestment Rally", "Speech_at_The__Earth_Day_Divestment_Rally.html", "4/9/24"]];
     templateInput.forEach(element => {
         let row = tbody.insertRow();
         let tdPost = row.appendChild(document.createElement("td"));
         let tdYear = row.appendChild(document.createElement("td"));
         tdPost.innerHTML = element[0];
         tdYear.innerHTML = element[2];
-        row.addEventListener('click', function() {location.href = '/blog/' + element[1]}, false);
+        row.addEventListener('click', function() {location.href = 'blog/' + element[1]}, false);
     });
 </script>
-</html>
