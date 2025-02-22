@@ -2,6 +2,10 @@ import os
 import json
 import pandas as pd
 
+def zero_pad_date(s):
+    padded = [x.zfill(2) for x in s.split('/')]
+    return('/'.join(padded))
+
 cwd = os.path.dirname(os.path.realpath(__file__))
 raw_text_dir = os.path.join(cwd, 'blog-raw-text')
 blog_dir = os.path.join(cwd, 'blog')
@@ -30,11 +34,16 @@ for file in files:
         text = ''.join([template[0], raw, template[1]])
         f.write(text)
         f.close()
-'''
+
+#add will.html
+for_blog_html.append(['My Public Will', 'will.html', '2/24/24'])
+
+#sort by date
 df = pd.DataFrame(data=for_blog_html)
-df[2] = pd.to_datetime(df[2], format="%m/%d/%Y")
-I need to zero pad my months and days in order to fix this ^
-'''
+df[3] = df[2].apply(zero_pad_date)
+df[3] = pd.to_datetime(df[2], format="%m/%d/%y")
+df = df.sort_values(by=3, ascending=False)
+df = df.drop([3], axis=1)
 
 #setup main blog templatee
 blogTemplate = open(os.path.join(cwd, 'blog.html'), "r").read()
@@ -43,5 +52,5 @@ with open(os.path.join(cwd, 'blog.html'), "w") as f:
     split_s = "templateInput = ["
     start_line = blogTemplate.find(split_s) + len(split_s)
     end_line = blogTemplate.find('\n', start_line)
-    f.write(blogTemplate[0:start_line - 1] + json.dumps(for_blog_html) + ';' + blogTemplate[end_line:len(blogTemplate)])
+    f.write(blogTemplate[0:start_line - 1] + json.dumps(df.values.tolist()) + ';' + blogTemplate[end_line:len(blogTemplate)])
     f.close()
