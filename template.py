@@ -2,6 +2,12 @@ import os
 import json
 import pandas as pd
 
+#add special posts
+special_posts = [
+    ['My Public Will', 'will.html', '2/24/24'],
+    ["Equation for the Moon's Cresent", 'Equation_for_the_Moon_s_Cresent.pdf', '3/20/25']
+]
+
 def zero_pad_date(s):
     padded = [x.zfill(2) for x in s.split('/')]
     return('/'.join(padded))
@@ -35,8 +41,8 @@ for file in files:
         f.write(text)
         f.close()
 
-#add will.html
-for_blog_html.append(['My Public Will', 'will.html', '2/24/24'])
+#add special posts
+[for_blog_html.append(l) for l in special_posts]
 
 #sort by date
 df = pd.DataFrame(data=for_blog_html)
