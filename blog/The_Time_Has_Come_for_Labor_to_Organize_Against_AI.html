@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;900&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <title>Noah's Blog</title>
+</head>
+<body>
+<h1 id="title" style="text-align: center; margin-top: 1cm;"></h1>
+<h2 id="author" style="text-align: center; font-weight: normal;"></h2>
+<p id="date" style="text-align: center; font-weight: normal;"></p>
+<div class="text">
+    <p id="main"></p>
+</div>
+</body>
+<script>
+var temp = `﻿The Time Has Come for Labor to Organize Against AI
+Noah Liguori-Bills
+5/14/25
+
+
+i. I Hate AI
+
+
+I hate reading about AI, I hate AI art, and at this point I honestly hate even thinking about AI. I don’t think I would have even read this article myself if I saw its title. But today Google’s new announcement (1) gave me a good old fear based motivation that hopefully has resulted in an idea that’s tolerable to read. Either that or as the Oppenheimer quote goes “I have become AI, writer of slop” (let me know in the non existent comments below).
+
+
+ii. Framework from my sick ass ethics TA
+
+
+In the spring of 2022, before AI was mentioned 69 times in every Linkedin post, I took a one credit course “Contemporary Issues in Computer Science”. At no fault of my excellent TA (shoutout Cody Turner (2)), the course disappointingly focused entirely on far future issues instead of the actual contemporary issues like the industry’s widespread participation in the military industrial complex, overreaching surveillance, and resource exploitation. Though to my surprise, just today I believe one topic we covered has become relevant to an actual contemporary issue: The Vulnerable World Hypothesis (3).
+
+
+I highly recommend that everyone read at least the abstract and the policy implications from The Vulnerable World Hypothesis referenced below, but to summarize the most relevant info, the hypothesis proposes that the discovery of some technologies could present an existential threat to human civilization, for example the discovery of a method to easily create a nuclear bomb from simple materials.
+
+
+iii. Google Fucking Around
+
+
+I doubt that easy nukes will ever be discovered, but I’ll finally stop beating around the bush and explain what I am worried about: AlphaEvolve (1), which is a system of large language models and automated evaluators that Google announced today. In the announcement they explain that it has already been used to make several math discoveries, including improving on the efficiency of an algorithm used in the training process of machine learning models, including itself. Google also revealed that for the past year they’ve been using AlphaEvolve to improve algorithmic efficiency throughout their operations, including a single AlphaEvolve derived heuristic that “in production for over a year, continuously recovers, on average, 0.7% of Google’s worldwide compute resources”.
+
+
+Why is this a big deal? Because this is the first significantly self improving AI, which carried out over a long term could lead to exponential self improvement, and eventually a superintelligence. The problem: no AI is remotely aligned with human values right now, and many AI safety researchers believe it may be impossible to do so. As you can imagine an AI superintelligence that doesn’t share our values poses an existential threat. In other words, AlphaEvolve has the potential to make Earth a vulnerable world.
+
+
+If you’re not convinced that self improving AI could be an existential threat I highly recommend you visit the YouTube channel “Robert Miles AI Safety” (4) that is run by, Robert Miles, (imagine I made a good repetition joke here), an expert in the field, and a companion channel he narrates and writes for “Rational Animations” (5).
+
+
+But let’s not be inflammatory here, AlphaEvolve is not a superintelligence, and it will probably take at least a few years and a shitton of resources before it becomes one. So the important question is how do we stop that from happening?
+
+
+Conveniently for us, Bostrom’s Vulnerable World was written with many practical answers, but inconveniently almost all of his solutions rely on government surveillance and regulation. Here in the US we know the only target those powers are good for are student newspaper contributors (6)
+
+
+iv. WORKERS OF THE WORLD UNITE
+
+
+Since at least the 1970s, labor unions around the world have employed social justice unionism, where social political liberation, such as queer rights and racial equity, are pursued as goals of equal importance to pay and working conditions. For the reasons I’ve discussed in this article, as well as the plethora of things I didn’t touch on (environmental impact, intellectual property, vomit worthy slop) it’s about time a generative AI boycott becomes widespread as well.
+
+
+This can take the tried and true boycott form: refusing all investment in and business with any company that enables the proliferation of generative AI. As always, widespread awareness of the issue and its underlying causes (dare I say class consciousness) will also be key to the success of this boycott. After all, Bostrom’s first, and in my opinion, best policy proposal starts “Technology policy should not unquestioningly assume that all technological progress is beneficial” (3).
+
+
+Maybe I should do a little more convincing, concluding, and motivating here, but it’s almost my bedtime and I’m too tired, so go out and convince yourselves comrades! I’ve given you a nice little list to start just below. And obviously get organized if you aren’t already silly!
+
+
+-Signing out with droopy eyes but the optimism of a revolutionary, Noah
+
+
+
+
+References:
+
+
+1. AlphaEvolve Announcement, https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/
+
+
+2. Cody Turner’s Personal Website, https://codyturnercreations.com/
+
+
+3. Bostrom, 2019, The Vulnerable World Hypothesis, https://doi.org/10.1111/1758-5899.12718
+
+
+4. Robert Miles AI Safety, YouTube channel, https://www.youtube.com/@RobertMilesAI
+
+
+5. Rational Animations, YouTube channel, https://www.youtube.com/@RationalAnimations
+
+
+6. Al Jazeera Staff, US revokes nearly 1,700 student visas: Who are the targets?, https://www.aljazeera.com/news/2025/4/18/us-revokes-nearly-1500-student-visas-who-are-the-targets`
+var text, title;
+[title, text] = temp.split(/\n(.*)/s);
+[author, text] = text.split(/\n(.*)/s);
+[date, text] = text.split(/\n(.*)/s);
+document.getElementById('main').innerHTML = text;
+document.getElementById('title').innerHTML = title;
+document.getElementById('author').innerHTML = author;
+document.getElementById('date').innerHTML = date;
+document.querySelector('title').innerHTML = title;
+</script>
+</html>
