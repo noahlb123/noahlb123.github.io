@@ -11,23 +11,23 @@
 <h1 id="title" style="text-align: center; margin-top: 1cm;"></h1>
 <h2 id="author" style="text-align: center; font-weight: normal;"></h2>
 <p id="date" style="text-align: center; font-weight: normal;"></p>
-<div class="text">
-    <p id="main"></p>
+<div class="text" id="main">
 </div>
 </body>
 <script>
+//define and insert text & metadata
 var temp = `﻿The Time Has Come for Labor to Organize Against AI
 Noah Liguori-Bills
 5/14/25
 
 
-i. I Hate AI
+<div style="text-align: center;">i. I Hate AI</div>
 
 
 I hate reading about AI, I hate AI art, and at this point I honestly hate even thinking about AI. I don’t think I would have even read this article myself if I saw its title. But today Google’s new announcement (1) gave me a good old fear based motivation that hopefully has resulted in an idea that’s tolerable to read. Either that or as the Oppenheimer quote goes “I have become AI, writer of slop” (let me know in the non existent comments below).
 
 
-ii. Framework from my sick ass ethics TA
+<div style="text-align: center;">ii. Framework from my sick ass ethics TA</div>
 
 
 In the spring of 2022, before AI was mentioned 69 times in every Linkedin post, I took a one credit course “Contemporary Issues in Computer Science”. At no fault of my excellent TA (shoutout Cody Turner (2)), the course disappointingly focused entirely on far future issues instead of the actual contemporary issues like the industry’s widespread participation in the military industrial complex, overreaching surveillance, and resource exploitation. Though to my surprise, just today I believe one topic we covered has become relevant to an actual contemporary issue: The Vulnerable World Hypothesis (3).
@@ -36,7 +36,7 @@ In the spring of 2022, before AI was mentioned 69 times in every Linkedin post, 
 I highly recommend that everyone read at least the abstract and the policy implications from The Vulnerable World Hypothesis referenced below, but to summarize the most relevant info, the hypothesis proposes that the discovery of some technologies could present an existential threat to human civilization, for example the discovery of a method to easily create a nuclear bomb from simple materials.
 
 
-iii. Google Fucking Around
+<div style="text-align: center;">iii. Google Fucking Around</div>
 
 
 I doubt that easy nukes will ever be discovered, but I’ll finally stop beating around the bush and explain what I am worried about: AlphaEvolve (1), which is a system of large language models and automated evaluators that Google announced today. In the announcement they explain that it has already been used to make several math discoveries, including improving on the efficiency of an algorithm used in the training process of machine learning models, including itself. Google also revealed that for the past year they’ve been using AlphaEvolve to improve algorithmic efficiency throughout their operations, including a single AlphaEvolve derived heuristic that “in production for over a year, continuously recovers, on average, 0.7% of Google’s worldwide compute resources”.
@@ -54,7 +54,7 @@ But let’s not be inflammatory here, AlphaEvolve is not a superintelligence, an
 Conveniently for us, Bostrom’s Vulnerable World was written with many practical answers, but inconveniently almost all of his solutions rely on government surveillance and regulation. Here in the US we know the only target those powers are good for are student newspaper contributors (6)
 
 
-iv. WORKERS OF THE WORLD UNITE
+<div style="text-align: center;">iv. WORKERS OF THE WORLD UNITE</div>
 
 
 Since at least the 1970s, labor unions around the world have employed social justice unionism, where social political liberation, such as queer rights and racial equity, are pursued as goals of equal importance to pay and working conditions. For the reasons I’ve discussed in this article, as well as the plethora of things I didn’t touch on (environmental impact, intellectual property, vomit worthy slop) it’s about time a generative AI boycott becomes widespread as well.
@@ -89,15 +89,23 @@ References:
 5. Rational Animations, YouTube channel, https://www.youtube.com/@RationalAnimations
 
 
-6. Al Jazeera Staff, US revokes nearly 1,700 student visas: Who are the targets?, https://www.aljazeera.com/news/2025/4/18/us-revokes-nearly-1500-student-visas-who-are-the-targets`
+6. Al Jazeera Staff, US revokes nearly 1,700 student visas: Who are the targets?, https://www.aljazeera.com/news/2025/4/18/us-revokes-nearly-1500-student-visas-who-are-the-targets
+`
 var text, title;
 [title, text] = temp.split(/\n(.*)/s);
 [author, text] = text.split(/\n(.*)/s);
 [date, text] = text.split(/\n(.*)/s);
-document.getElementById('main').innerHTML = text;
 document.getElementById('title').innerHTML = title;
 document.getElementById('author').innerHTML = author;
 document.getElementById('date').innerHTML = date;
 document.querySelector('title').innerHTML = title;
+
+//insert each text line as p elm
+parentElm = document.getElementById('main');
+text.split('\n').forEach(textLine => {
+    let p = document.createElement("p");
+    p.innerHTML = textLine == '' ? '\n': textLine;
+    parentElm.appendChild(p);
+});
 </script>
 </html>

@@ -11,11 +11,11 @@
 <h1 id="title" style="text-align: center; margin-top: 1cm;"></h1>
 <h2 id="author" style="text-align: center; font-weight: normal;"></h2>
 <p id="date" style="text-align: center; font-weight: normal;"></p>
-<div class="text">
-    <p id="main"></p>
+<div class="text" id="main">
 </div>
 </body>
 <script>
+//define and insert text & metadata
 var temp = `Speech at UConn Board of Trustees Meeting
 Noah Liguori-Bills
 3/30/22
@@ -41,10 +41,17 @@ var text, title;
 [title, text] = temp.split(/\n(.*)/s);
 [author, text] = text.split(/\n(.*)/s);
 [date, text] = text.split(/\n(.*)/s);
-document.getElementById('main').innerHTML = text;
 document.getElementById('title').innerHTML = title;
 document.getElementById('author').innerHTML = author;
 document.getElementById('date').innerHTML = date;
 document.querySelector('title').innerHTML = title;
+
+//insert each text line as p elm
+parentElm = document.getElementById('main');
+text.split('\n').forEach(textLine => {
+    let p = document.createElement("p");
+    p.innerHTML = textLine == '' ? '\n': textLine;
+    parentElm.appendChild(p);
+});
 </script>
 </html>
