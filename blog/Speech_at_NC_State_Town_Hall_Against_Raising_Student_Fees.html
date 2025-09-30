@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;900&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <title>Noah's Blog</title>
+</head>
+<body>
+<h1 id="title" style="text-align: center; margin-top: 1cm;"></h1>
+<h2 id="author" style="text-align: center; font-weight: normal;"></h2>
+<p id="date" style="text-align: center; font-weight: normal;"></p>
+<div class="text" id="main">
+</div>
+</body>
+<script>
+//define and insert text & metadata
+var temp = `﻿Speech at NC State Town Hall, Against Raising Student Fees
+Noah Liguori-Bills
+9/30/25
+
+
+Hello everyone, my name is Noah, and I am an NC State PhD Student. I would like to start by clarifying some misrepresentations of the proposals at hand. I’ve seen online discussions that frame student governments' choice as one for or against funding various NC State programs. This is not what is being proposed, we are discussing whether these programs should be funded by increasing student fees for all undergraduate and graduate students.
+
+
+These clarifications are important to me because although I am supportive of some of the proposed increases in funding, I oppose any of these programs being funded with increases in student fees.
+
+
+From the undergrad perspective, I am opposed to fees for reasons explained by a quote from Bailey Fletcher, a higher education journalist:
+
+
+“In many cases, opaque pricing is strategic. When schools separate tuition from various fees, they can advertise a lower “sticker price” while recouping costs elsewhere. This tactic, similar to airline pricing or hospital billing, gives institutions room to adjust charges without formally raising tuition.”
+
+
+But the primary reason why I am opposed to fees is the effects on graduate students. Many NC State grads do not pay any tuition because we are full time employees of the university. In my department, we take no classes for the majority of the time we spend as a PhD student. Instead we are working full time on research and teaching, in a way that is often identical to the jobs of various other NC State research staff; but unlike those jobs, grads have to pay over $2,500/year in fees out of pocket every year, whether or not they are taking any classes.
+
+
+According to a report by the Graduate Student Association’s LASA committee where they compared NC State’s graduate student fees to peer institutions, defined as an institution that “is comparable to NC State in size, research classification, and government funding sources.”
+
+
+“NC State [is] the only R1 university in the Triangle where most graduate students must pay fees out-of-pocket.”
+
+
+“NC State has the third highest out-of-pocket graduate student fees of the 13 peer institutions listed in Table 6”
+
+
+“Our minimum stipend relative to our cost of living “places NC State third-to-last of the 11 institutions listed above.”
+
+
+As students here today that are involved in student government, we understand that NC State has many diverse and large funding sources, including its muti-billion dollar endowment, extensive alumni network, and its R1 research status. I believe that the increased financial burden of worthwhile programs should fall on these large and resilient funding sources, not the NC State students and workers who are already burdened by paying more than their fair share under an opaque pricing model.`
+var text, title;
+[title, text] = temp.split(/\n(.*)/s);
+[author, text] = text.split(/\n(.*)/s);
+[date, text] = text.split(/\n(.*)/s);
+document.getElementById('title').innerHTML = title;
+document.getElementById('author').innerHTML = author;
+document.getElementById('date').innerHTML = date;
+document.querySelector('title').innerHTML = title;
+
+//insert each text line as p elm
+parentElm = document.getElementById('main');
+text.split('\n').forEach(textLine => {
+    let p = document.createElement("p");
+    p.innerHTML = textLine == '' ? '\n': textLine;
+    parentElm.appendChild(p);
+});
+</script>
+</html>
